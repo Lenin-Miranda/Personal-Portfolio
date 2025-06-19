@@ -8,14 +8,22 @@ const { PORT = 3001 } = process.env;
 
 const app = express();
 
-const corsOptions = {
-  origin: "https://lenin-miranda.github.io",
-  methods: "GET,POST,PUT,DELETE,OPTIONS",
-  allowedHeaders: "Content-Type,Authorization",
-};
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://lenin-miranda.github.io",
+];
 
-app.use(cors(corsOptions));
-
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.indexOf(origin) === -1) {
+        return callback(new Error("CORS no permitido por el servidor."), false);
+      }
+      return callback(null, true);
+    },
+  })
+);
 app.use(express.json());
 app.use("/send-email", emailRouter);
 
