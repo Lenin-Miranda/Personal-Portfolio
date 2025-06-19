@@ -44,7 +44,7 @@
   text-align: center;
   border-radius: 5px;
   background-color: #242424;
-  padding: 20px;
+  padding: 15px;
   box-sizing: content-box;
   border: 1px solid #242424;
   border-radius: 10px;
@@ -63,7 +63,7 @@
   }
 
   .navbar__menu-link {
-    padding: 15px;
+    padding: 10px;
   }
 
   .navbar__title {
