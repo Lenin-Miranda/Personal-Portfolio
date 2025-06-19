@@ -1,0 +1,45 @@
+.swiper-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.lenguaje-slider-container {
+  width: 100%;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+  max-width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.lenguaje-slider {
+  display: flex;
+  align-items: center;
+}
+
+.lenguaje-slide {
+  width: 200px !important;
+  text-align: center;
+  padding: 10px 20px;
+  transition: transform 0.3s ease;
+}
+
+.lenguaje-slide:hover {
+  transform: scale(1.15);
+}
+
+.lenguaje-icon {
+  font-size: 48px;
+  cursor: pointer;
+}
+
+.lenguaje-label {
+  font-size: 14px;
+  margin-top: 8px;
+  color: #fff;
+}
+
+.lenguaje-slider-title {
+  font-size: 1.8rem;
+  margin: 0 0 5px;
+}
