@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/Lenin-Miranda/Personal-Portfolio",
+  "homepage": "https://lenin-miranda.github.io/Personal-Portfolio",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
