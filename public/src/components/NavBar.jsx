@@ -49,7 +49,7 @@ function NavBar({ handleScroll }) {
                 className="navbar__menu-link"
                 style={{
                   border:
-                    handleScroll > 1400 && handleScroll < 2200
+                    handleScroll > 1400 && handleScroll < 3500
                       ? "1px solid #fff"
                       : "",
                   transition: "all 0.5s ease-in-out",
@@ -65,7 +65,7 @@ function NavBar({ handleScroll }) {
                 duration={200}
                 className="navbar__menu-link"
                 style={{
-                  border: handleScroll > 2200 ? "1px solid #fff" : "",
+                  border: handleScroll > 3700 ? "1px solid #fff" : "",
                   transition: "all 0.5s ease-in-out",
                 }}
               >

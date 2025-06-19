@@ -44,7 +44,7 @@ function LenguajeSlider() {
           delay: 0,
           disableOnInteraction: false,
         }}
-        speed={3000}
+        speed={5000}
         slidesPerView={"auto"}
         freeMode={true}
         allowTouchMove={false}
