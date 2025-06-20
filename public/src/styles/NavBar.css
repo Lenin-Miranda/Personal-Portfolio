@@ -60,11 +60,15 @@
 
 @media (max-width: 768px) {
   .navbar__menu-list {
-    gap: 20px;
+    gap: 5px;
+  }
+
+  .navbar {
+    padding: 15px;
   }
 
   .navbar__menu-link {
-    padding: 10px;
+    padding: 5px;
   }
 
   .navbar__title {

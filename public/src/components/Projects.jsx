@@ -3,6 +3,7 @@ import { SiJavascript, SiMongodb, SiExpress } from "react-icons/si";
 import spots from "../assets/spots.png";
 import toDoList from "../assets/todoList.png";
 import wtwr from "../assets/wtwr-bg.png";
+import dataCleaner from "../assets/data-bg.png";
 
 function Projects() {
   const projects = [
@@ -37,7 +38,7 @@ function Projects() {
       description:
         "A weather app with a clean UX/UI and responsive design, with API integration and backend with Node.js and ExpressDB and MongoDB",
       image: wtwr,
-      link: "https://lenin-miranda.github.io/se_project_wtwr/",
+      link: "https://lenin-miranda.github.io/se_project_react/",
       technologies: [
         { icon: <FaReact />, name: "React", color: "#61DAFB" },
         { icon: <SiJavascript />, name: "JavaScript", color: "#F7DF1E" },
@@ -51,7 +52,7 @@ function Projects() {
       name: "Data Cleaner",
       description:
         "A data cleaner made for data analysis, wich allows you to clean your data and make it ready for analysis, from .xlsx to .csv, with the ability to separate addresses into different columns like street, city, state, country, etc. for very better use on software like BCC",
-      image: toDoList,
+      image: dataCleaner,
       link: "https://github.com/Lenin-Miranda/csv-cleaner",
       technologies: [{ icon: <FaPython />, name: "Python", color: "#3776AB" }],
       icon: "🧹",
