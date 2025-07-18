@@ -15,6 +15,7 @@
 .lenguaje-slider {
   display: flex;
   align-items: center;
+  height: 100%;
 }
 
 .lenguaje-slide {
@@ -22,6 +23,7 @@
   text-align: center;
   padding: 10px 20px;
   transition: transform 0.3s ease;
+  height: 100%;
 }
 
 .lenguaje-slide:hover {
@@ -42,4 +44,23 @@
 .lenguaje-slider-title {
   font-size: 1.8rem;
   margin: 0 0 5px;
+}
+
+@media (max-width: 768px) {
+  .lenguaje-slider-title {
+    font-size: 1.2rem;
+  }
+  .lenguaje-icon {
+    font-size: 24px;
+  }
+  .lenguaje-label {
+    font-size: 10px;
+  }
+  .lenguaje-slide {
+    width: 100px !important;
+    padding: 0;
+  }
+  .lenguaje-slider-container {
+    height: 100%;
+  }
 }

@@ -4,13 +4,15 @@ import spots from "../assets/spots.png";
 import toDoList from "../assets/todoList.png";
 import wtwr from "../assets/wtwr-bg.png";
 import dataCleaner from "../assets/data-bg.png";
+import news from "../assets/news-bg.png";
+import cyberspace from "../assets/cyberspace.png";
 
 function Projects() {
   const projects = [
     {
       name: "Spots",
       description:
-        "A social media platform for sharing photos about your favorite spots",
+        "A vibrant social media platform where users can share and discover photos of their favorite places, featuring an intuitive interface and interactive community features.",
       image: spots,
       link: "https://lenin-miranda.github.io/se_project_spots/",
       technologies: [
@@ -23,7 +25,7 @@ function Projects() {
     {
       name: "To-Do List",
       description:
-        "A to-do list app with form validation, clean UX/UI and responsive design",
+        "A productivity app designed for efficient task management, offering real-time form validation, a clean and responsive UI, and seamless user experience across devices.",
       image: toDoList,
       link: "https://lenin-miranda.github.io/se_project_todo-app/",
       technologies: [
@@ -38,7 +40,7 @@ function Projects() {
       description:
         "A weather app with a clean UX/UI and responsive design, with API integration and backend with Node.js and ExpressDB and MongoDB",
       image: wtwr,
-      link: "https://lenin-miranda.github.io/se_project_react/",
+      link: "https://www.wtwrle.ignorelist.com/",
       technologies: [
         { icon: <FaReact />, name: "React", color: "#61DAFB" },
         { icon: <SiJavascript />, name: "JavaScript", color: "#F7DF1E" },
@@ -56,6 +58,34 @@ function Projects() {
       link: "https://github.com/Lenin-Miranda/csv-cleaner",
       technologies: [{ icon: <FaPython />, name: "Python", color: "#3776AB" }],
       icon: "🧹",
+    },
+    {
+      name: "News App",
+      description:
+        "A news aggregator app that allows users to search and save articles from various sources, featuring a modern UI and responsive design.",
+      image: news,
+      link: "https://lenin-miranda.github.io/News-Explorer/",
+      technologies: [
+        { icon: <FaReact />, name: "React", color: "#61DAFB" },
+        { icon: <SiJavascript />, name: "JavaScript", color: "#F7DF1E" },
+        { icon: <FaNodeJs />, name: "Node.js", color: "#339933" },
+        { icon: <SiExpress />, name: "Express", color: "#000000" },
+      ],
+      icon: "📰",
+    },
+    {
+      name: "It Cyberspace",
+      description:
+        "A professional website for an IT company, showcasing services, portfolio, and contact information with a clean and modern design.",
+      image: cyberspace,
+      link: "https://it-cyberspace.com/",
+      technologies: [
+        { icon: <FaReact />, name: "React", color: "#61DAFB" },
+        { icon: <SiJavascript />, name: "JavaScript", color: "#F7DF1E" },
+        { icon: <FaNodeJs />, name: "Node.js", color: "#339933" },
+        { icon: <SiExpress />, name: "Express", color: "#000000" },
+      ],
+      icon: "🪐",
     },
   ];
 

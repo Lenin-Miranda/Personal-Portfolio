@@ -5,7 +5,7 @@ import "../App.css";
 import AOS from "aos";
 import "aos/dist/aos.css"; // <- ESTA LÍNEA ES CLAVE
 import { useEffect, useState } from "react";
-
+import ParticleBackground from "../components/AnimationParticles";
 function App() {
   useEffect(() => {
     AOS.init({
