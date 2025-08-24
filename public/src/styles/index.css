@@ -1,0 +1,4 @@
+@import "tailwindcss";
+
+/* Importar fuentes personalizadas */
+@import "./fonts.css";

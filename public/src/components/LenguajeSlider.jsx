@@ -16,9 +16,6 @@ import {
   SiTailwindcss,
 } from "react-icons/si";
 
-import "swiper/css";
-import "../styles/lenguajeSlider.css";
-
 function LenguajeSlider() {
   const lenguajes = [
     { icon: <FaReact />, name: "React", color: "#61DAFB" },

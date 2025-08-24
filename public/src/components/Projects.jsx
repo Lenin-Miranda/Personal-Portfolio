@@ -102,7 +102,7 @@ function Projects() {
               style={{ textDecoration: "none" }}
               key={project.name}
             >
-              <div className="projects__card" data-aos="fade-right">
+              <div className="projects__card" data-aos="fade-left">
                 <i className="projects__card-icon">{project.icon}</i>
                 <h3
                   className="projects__card-title"

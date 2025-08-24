@@ -1,10 +1,10 @@
 import { Link } from "react-scroll";
-
-function NavBar({ handleScroll }) {
+import { NavLink } from "react-router-dom";
+function NavBar() {
   return (
     <nav className="navbar">
       <div className="navbar__container">
-        <h2 className="navbar__title">Personal Portfolio</h2>
+        <h2 className="navbar__title">Lenin Miranda</h2>
         <div className="navbar__menu">
           <ul className="navbar__menu-list">
             <li className="navbar__menu-item">
@@ -13,13 +13,6 @@ function NavBar({ handleScroll }) {
                 smooth={true}
                 duration={200}
                 className="navbar__menu-link"
-                style={{
-                  border:
-                    handleScroll > -100 && handleScroll < 600
-                      ? "1px solid #fff"
-                      : "",
-                  transition: "all 0.5s ease-in-out",
-                }}
               >
                 Home
               </Link>
@@ -30,13 +23,6 @@ function NavBar({ handleScroll }) {
                 smooth={true}
                 duration={200}
                 className="navbar__menu-link"
-                style={{
-                  border:
-                    handleScroll > 600 && handleScroll < 1400
-                      ? "1px solid #fff"
-                      : "",
-                  transition: "all 0.5s ease-in-out",
-                }}
               >
                 About
               </Link>
@@ -47,13 +33,6 @@ function NavBar({ handleScroll }) {
                 smooth={true}
                 duration={200}
                 className="navbar__menu-link"
-                style={{
-                  border:
-                    handleScroll > 1400 && handleScroll < 3500
-                      ? "1px solid #fff"
-                      : "",
-                  transition: "all 0.5s ease-in-out",
-                }}
               >
                 Projects
               </Link>
@@ -64,16 +43,20 @@ function NavBar({ handleScroll }) {
                 smooth={true}
                 duration={200}
                 className="navbar__menu-link"
-                style={{
-                  border: handleScroll > 3700 ? "1px solid #fff" : "",
-                  transition: "all 0.5s ease-in-out",
-                }}
               >
                 Contact
               </Link>
             </li>
           </ul>
         </div>
+        <button className="navbar__menu-button">
+          <NavLink
+            target={"_blank"}
+            to={"https://www.linkedin.com/in/lenin-miranda-0b74b4288/"}
+          >
+            Connect with me
+          </NavLink>
+        </button>
       </div>
     </nav>
   );

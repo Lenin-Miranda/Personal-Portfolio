@@ -3,9 +3,8 @@ import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import "../App.css";
 import AOS from "aos";
-import "aos/dist/aos.css"; // <- ESTA LÍNEA ES CLAVE
+import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
-import ParticleBackground from "../components/AnimationParticles";
 function App() {
   useEffect(() => {
     AOS.init({

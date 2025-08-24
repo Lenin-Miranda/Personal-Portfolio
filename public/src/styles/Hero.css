@@ -1,9 +1,13 @@
+@import "./fonts.css";
+
 .hero {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 100px;
+  padding: 0;
+  position: relative;
+  min-height: 100vh;
 }
 
 .hero__content {
@@ -14,6 +18,7 @@
   gap: 30px;
   position: relative;
   width: 100%;
+  z-index: 10;
 }
 
 .hero__container {
@@ -23,6 +28,8 @@
   flex-direction: column;
   gap: 80px;
   width: 100%;
+  position: relative;
+  min-height: 100vh;
 }
 
 .hero__container-image {
@@ -43,22 +50,46 @@
 }
 
 .hero__title {
-  font-size: 2.5rem;
+  font-family: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
   font-weight: 700;
   text-align: center;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  font-size: 72px;
+}
+
+.hero__title-main {
+  font-weight: 800;
+  font-family: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  background: linear-gradient(
+    180deg,
+    rgb(216, 216, 216) 0%,
+    rgb(46, 46, 46) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .hero__description {
+  font-family: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
   text-align: center;
-  font-size: 1.5rem;
-  line-height: 1.5;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.6;
   max-width: 800px;
   margin: 0 auto;
+  letter-spacing: -0.01em;
 }
 
 @media (max-width: 768px) {
   .hero__title {
     font-size: 2rem;
+    font-weight: 700;
   }
   .hero__image {
     max-width: 300px;
@@ -67,5 +98,6 @@
 
   .hero__description {
     font-size: 1.2rem;
+    font-weight: 400;
   }
 }
