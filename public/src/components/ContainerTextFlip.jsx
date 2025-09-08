@@ -42,6 +42,7 @@ export function ContainerTextFlip({
       animate={{ width }}
       transition={{ duration: animationDuration / 2000 }}
       className={cn(
+        "hero__title-description",
         "relative inline-block rounded-lg pt-2 pb-3 text-center text-7xl font-bold text-white",
         "bg-gradient-to-b from-[#404d5d] to-[#2d3844]", // gradiente vertical más oscuro abajo
         "shadow-[inset_0_-1px_#1e293b,inset_0_0_0_1px_#334155,0_4px_8px_rgba(0,0,0,0.5)]", // sombras inset y externa

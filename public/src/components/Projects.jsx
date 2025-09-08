@@ -127,15 +127,12 @@ function Projects() {
                         color: tech.color,
                       }}
                     >
-                      <span
-                        style={{ fontSize: "1.8rem" }}
-                        className="project__card-tecnology-icon"
-                      >
+                      <span className="project__card-tecnology-icon">
                         {tech.icon}
                         {""}
-                        <span className="project__card-tecnology-name">
-                          {tech.name}
-                        </span>
+                      </span>
+                      <span className="project__card-tecnology-name">
+                        {tech.name}
                       </span>
                     </div>
                   ))}

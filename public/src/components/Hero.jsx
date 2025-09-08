@@ -21,17 +21,14 @@ function Hero() {
       <div className="hero__container" data-aos="fade-up">
         <BackgroundLines />
         <div className="hero__content">
-          <motion.h1
-            className="hero__title"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
+          <motion.h1 className="hero__title text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
             <span className="hero__title-main">
               Lenin Miranda,
               <br />
-            </span>{" "}
-            <ContainerTextFlip words={titleWords} />
+            </span>
+            <span className="hero__title-description">
+              <ContainerTextFlip words={titleWords} />
+            </span>
           </motion.h1>
 
           <motion.div

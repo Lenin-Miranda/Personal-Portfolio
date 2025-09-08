@@ -3,7 +3,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 120px;
+  margin: 120px 0;
+  padding: 0;
 }
 
 .projects__container {
@@ -57,7 +58,7 @@
 
 .projects__card-image {
   width: 100%;
-  height: 352px;
+  height: 350px;
   object-fit: cover;
   object-position: center;
   border-radius: 10px;
@@ -71,6 +72,11 @@
 }
 .project__card-tecnologies {
   transition: transform 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  align-items: center;
 }
 .project__card-tecnology {
   display: flex;
@@ -79,6 +85,12 @@
   justify-content: center;
   gap: 30px;
 }
+.project__card-tecnologie-icon {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.8rem;
+}
 
 .project__card-tecnologies:hover {
   transform: scale(1.2);
@@ -86,4 +98,40 @@
 .project__card-tecnology-name {
   font-size: 0.8rem;
   text-align: center;
+}
+
+@media (max-width: 760px) {
+  .projects {
+    margin: 40px 0;
+  }
+
+  .projects__cards {
+    padding: 20px;
+  }
+
+  .projects__card {
+    padding: 15px;
+  }
+
+  .projects__card-title {
+    font-size: 18px;
+  }
+
+  .projects__card-icon {
+    font-size: 24px;
+  }
+  .projects__card-description {
+    font-size: 16px;
+  }
+
+  .projects__card-image {
+    height: 200px;
+  }
+  .projects__cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .project__card-tecnology-name {
+    font-size: 0.5rem;
+  }
 }

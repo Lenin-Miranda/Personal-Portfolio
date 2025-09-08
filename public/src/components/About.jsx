@@ -45,7 +45,7 @@ When I'm not coding, I like exploring new tech trends and collaborating with oth
   return (
     <section className="about" id="about" data-aos="fade-up">
       <GridBackgroundDemo>
-        <h2 className="about__subtitle text-6xl">
+        <h2 className="about__subtitle ">
           Software Developer{" "}
           <span className="text-blue-500 dark:text-blue-500">
             turning ideas
@@ -211,7 +211,6 @@ When I'm not coding, I like exploring new tech trends and collaborating with oth
           </div>
         </div>
       </GridBackgroundDemo>
-      <LenguajeSlider />
     </section>
   );
 }

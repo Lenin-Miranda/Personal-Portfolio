@@ -65,10 +65,37 @@
   box-shadow: 0px 0px 10px 4px rgba(147, 147, 147, 0.485);
   transform: translate(0, -2px);
 }
+.navbar__menu-icon {
+  visibility: hidden;
+}
 
 @media (max-width: 768px) {
   .navbar__menu-list {
-    gap: 5px;
+    visibility: hidden;
+    gap: 20px;
+    display: none;
+  }
+  .navbar__menu-list-open {
+    visibility: visible;
+    position: absolute;
+    background-color: #ffffffb4;
+    padding: 20px;
+    color: #0000009e;
+    top: 85px;
+    left: 0;
+    width: 100%;
+    transition: all 0.4s ease;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 1000;
+
+    border-radius: 8px;
+    font-weight: 600;
+
+    display: block;
+  }
+  .navbar__container {
+    position: relative;
   }
 
   .navbar {
@@ -81,5 +108,15 @@
 
   .navbar__title {
     font-size: 14px;
+  }
+  .navbar__menu-button {
+    display: none;
+  }
+  .navbar__menu-icon {
+    visibility: visible;
+    cursor: pointer;
+    font-size: 24px;
+  }
+  .navbar__menu {
   }
 }
