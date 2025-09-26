@@ -196,6 +196,7 @@ When I'm not coding, I like exploring new tech trends and collaborating with oth
                 <li className="about__skills-list-item">Git</li>
                 <li className="about__skills-list-item">GitHub</li>
                 <li className="about__skills-list-item">Jest</li>
+                <li className="about__skills-list-item">Postman</li>
                 <li className="about__skills-list-item">Eslint</li>
               </ul>
               <ul className="about__skills-list">
