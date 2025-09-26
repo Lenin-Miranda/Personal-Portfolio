@@ -15,7 +15,11 @@ function NavBar() {
       <div className="navbar__container">
         <h2 className="navbar__title">Lenin Miranda</h2>
         <div className="navbar__menu">
-          <ul className="navbar__menu-list">
+          <ul
+            className={`navbar__menu-list ${
+              isMenuOpen ? "navbar__menu-list-open" : ""
+            }`}
+          >
             <li className="navbar__menu-item">
               <Link
                 to="home"
@@ -57,54 +61,6 @@ function NavBar() {
               </Link>
             </li>
           </ul>
-          {isMenuOpen && (
-            <ul
-              className={`navbar__menu-list ${
-                isMenuOpen ? "navbar__menu-list-open" : ""
-              }`}
-            >
-              <li className="navbar__menu-item">
-                <Link
-                  to="home"
-                  smooth={true}
-                  duration={200}
-                  className="navbar__menu-link"
-                >
-                  Home
-                </Link>
-              </li>
-              <li className="navbar__menu-item">
-                <Link
-                  to="about"
-                  smooth={true}
-                  duration={200}
-                  className="navbar__menu-link"
-                >
-                  About
-                </Link>
-              </li>
-              <li className="navbar__menu-item">
-                <Link
-                  to="projects"
-                  smooth={true}
-                  duration={200}
-                  className="navbar__menu-link"
-                >
-                  Projects
-                </Link>
-              </li>
-              <li className="navbar__menu-item">
-                <Link
-                  to="contact"
-                  smooth={true}
-                  duration={200}
-                  className="navbar__menu-link"
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          )}
         </div>
         <button className="navbar__menu-button">
           <NavLink

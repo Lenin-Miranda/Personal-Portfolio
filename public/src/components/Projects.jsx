@@ -1,5 +1,7 @@
 import { FaReact, FaNodeJs, FaHtml5, FaCss3, FaPython } from "react-icons/fa";
 import { SiJavascript, SiMongodb, SiExpress } from "react-icons/si";
+import { CardContainer, CardBody, CardItem } from "./3DCard";
+
 import spots from "../assets/spots.png";
 import toDoList from "../assets/todoList.png";
 import wtwr from "../assets/wtwr-bg.png";
@@ -91,7 +93,7 @@ function Projects() {
 
   return (
     <section className="projects" data-aos="fade-up" path="projects">
-      <div className="projects__container">
+      <CardContainer className="projects__container">
         <h2 className="projects__title">Projects</h2>
         <div className="projects__cards">
           {projects.map((project) => (
@@ -102,25 +104,27 @@ function Projects() {
               style={{ textDecoration: "none" }}
               key={project.name}
             >
-              <div className="projects__card" data-aos="fade-left">
-                <i className="projects__card-icon">{project.icon}</i>
-                <h3
+              <CardBody className="projects__card" data-aos="fade-left">
+                <CardItem className="projects__card-icon">
+                  {project.icon}
+                </CardItem>
+                <CardItem
                   className="projects__card-title"
                   style={{ margin: "0 0 10px" }}
                 >
                   {project.name}
-                </h3>
+                </CardItem>
                 <img
                   className="projects__card-image"
                   src={project.image}
                   alt={project.name}
                 />
-                <p className="projects__card-description">
+                <CardItem className="projects__card-description">
                   {project.description}
-                </p>
-                <div className="project__card-tecnology">
+                </CardItem>
+                <CardItem className="project__card-tecnology">
                   {project.technologies.map((tech, index) => (
-                    <div
+                    <i
                       key={index}
                       className="project__card-tecnologies"
                       style={{
@@ -134,14 +138,14 @@ function Projects() {
                       <span className="project__card-tecnology-name">
                         {tech.name}
                       </span>
-                    </div>
+                    </i>
                   ))}
-                </div>
-              </div>
+                </CardItem>
+              </CardBody>
             </a>
           ))}
         </div>
-      </div>
+      </CardContainer>
     </section>
   );
 }
