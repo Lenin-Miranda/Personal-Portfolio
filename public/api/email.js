@@ -1,8 +1,10 @@
-const express = require("express");
-const nodemailer = require("nodemailer");
-const router = express.Router();
+import nodemailer from "nodemailer";
 
-router.post("/", async (req, res) => {
+export default async function handler(req, res) {
+  if (req.method !== "POST") {
+    return res.status(405).json({ message: "Only POST requests allowed" });
+  }
+
   const { name, email, subject, message } = req.body;
 
   const transporter = nodemailer.createTransport({
@@ -20,24 +22,21 @@ router.post("/", async (req, res) => {
     text: message,
   };
 
-  const confirmationToCient = {
+  const confirmationToClient = {
     from: `Lenin Miranda <${process.env.EMAIL_USER}>`,
     to: email,
     subject: `Thank you for contacting me!`,
-    text: `Hi ${name},\n\nThanks for reaching out to me. I'll contact you as soon as posible`,
+    text: `Hi ${name},\n\nThanks for reaching out. I'll contact you as soon as possible.`,
   };
+
   try {
     await transporter.sendMail(mailToCompany);
-    await transporter.sendMail(confirmationToCient);
-
+    await transporter.sendMail(confirmationToClient);
     res
       .status(200)
       .json({ success: true, message: "Correo enviado con éxito" });
   } catch (error) {
-    console.error("Error al enviar el correo", error);
-    res
-      .status(500)
-      .json({ success: false, message: "Error al enviar el correo" });
+    console.error("Error sending email", error);
+    res.status(500).json({ success: false, message: "Error sending email" });
   }
-});
-module.exports = router;
+}
