@@ -117,3 +117,19 @@
   line-height: 1.5;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@media (max-width: 768px) {
+  .certification__item {
+    flex-direction: column;
+  }
+  .certification__item-title {
+    font-size: 1.5rem;
+  }
+  .certification__item-paragraph {
+    font-size: 1rem;
+  }
+  .certification__item-img img {
+    width: 100%;
+    height: auto;
+  }
+}
