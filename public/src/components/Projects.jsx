@@ -94,7 +94,14 @@ function Projects() {
   return (
     <section className="projects" data-aos="fade-up" path="projects">
       <CardContainer className="projects__container">
-        <h2 className="projects__title">Projects</h2>
+        <h2 className="projects__title">
+          Projects &{" "}
+          <span className="text-blue-500 dark:text-blue-500">Work</span>
+        </h2>
+        <p className="projects__subtitle">
+          A selection of projects that demonstrate my ability to design, build,
+          and deploy modern web applications from concept to completion.
+        </p>
         <div className="projects__cards">
           {projects.map((project) => (
             <a

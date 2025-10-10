@@ -8,7 +8,6 @@ import {
   FaCss3,
   FaPython,
   FaGithub,
-  FaGit,
 } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
 import {
