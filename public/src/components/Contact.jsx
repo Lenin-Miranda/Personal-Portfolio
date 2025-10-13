@@ -50,8 +50,7 @@ function Contact() {
 
     try {
       const res = await fetch(
-        "http://localhost:3001/send-email" ||
-          "https://portfolio-backend-18x1.onrender.com/send-email",
+        "https://portfolio-backend-18x1.onrender.com/send-email",
         {
           method: "POST",
           headers: {
