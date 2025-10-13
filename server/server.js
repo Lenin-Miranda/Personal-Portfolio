@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
-const emailRouter = require("../api/email");
+const emailRouter = require("./routes/email");
 dotenv.config();
 
 const { PORT = 3001 } = process.env;
@@ -9,6 +9,7 @@ const { PORT = 3001 } = process.env;
 const app = express();
 
 const allowedOrigins = [
+  "http://localhost:3000",
   "http://localhost:3001",
   "https://lenin-miranda.github.io",
 ];

@@ -49,13 +49,17 @@ function Contact() {
     };
 
     try {
-      const res = await fetch("api/email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const res = await fetch(
+        "http://localhost:3001/send-email" ||
+          "https://portfolio-backend-18x1.onrender.com/send-email",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       const result = await res.json();
 
@@ -172,6 +176,7 @@ function Contact() {
                   ? "not-allowed"
                   : "pointer",
               color: !isEnabled || isLoading || isSuccess ? "#000" : "#fff",
+
               transition: "0.3s ease",
             }}
           >
