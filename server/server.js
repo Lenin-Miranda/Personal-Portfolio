@@ -13,6 +13,7 @@ const allowedOrigins = [
   "http://localhost:3001",
   "https://lenin-miranda.github.io",
   "https://leninmiranda.com",
+  "https://portfolio-backend-18x1.onrender.com",
 ];
 
 app.use(
