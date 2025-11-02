@@ -1,12 +1,101 @@
-# React + Vite
+# Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Un portafolio personal moderno construido con React, Vite y Tailwind CSS.
 
-Currently, two official plugins are available:
+## 🚀 Despliegue en Render
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Frontend (Static Site)
 
-## Expanding the ESLint configuration
+1. Conecta tu repositorio de GitHub a Render
+2. Crea un nuevo **Static Site**
+3. Configuración:
+   - **Build Command**: `cd public && npm install && npm run build`
+   - **Publish Directory**: `public/dist`
+   - **Environment**: Node 18+
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Backend (Web Service)
+
+1. Crea un nuevo **Web Service** en Render
+2. Configuración:
+   - **Build Command**: `cd server && npm install`
+   - **Start Command**: `cd server && npm start`
+   - **Environment**: Node 18+
+
+#### Variables de Entorno del Backend:
+
+```
+EMAIL_USER=tu_email@gmail.com
+EMAIL_PASS=tu_contraseña_de_aplicacion
+PORT=10000
+```
+
+## 🛠️ Desarrollo Local
+
+### Frontend
+
+```bash
+cd public
+npm install
+npm run dev
+```
+
+### Backend
+
+```bash
+cd server
+npm install
+npm start
+```
+
+## 📁 Estructura del Proyecto
+
+```
+├── public/          # Frontend React + Vite
+│   ├── src/
+│   ├── dist/        # Build output
+│   └── package.json
+├── server/          # Backend Express
+│   ├── routes/
+│   ├── .env
+│   └── package.json
+└── README.md
+```
+
+## 🔧 Tecnologías
+
+### Frontend
+
+- React 19
+- Vite 6
+- Tailwind CSS 4
+- Framer Motion
+- AOS (Animate On Scroll)
+- Swiper
+- TypeWriter Effect
+- React Icons
+- SweetAlert2
+
+### Backend
+
+- Node.js
+- Express 5
+- Nodemailer
+- CORS
+- dotenv
+
+## 📧 Formulario de Contacto
+
+El formulario de contacto utiliza Nodemailer para enviar emails a través de Gmail.
+
+### Configuración de Gmail:
+
+1. Habilita la verificación en dos pasos
+2. Genera una contraseña de aplicación
+3. Usa la contraseña de aplicación en `EMAIL_PASS`
+
+## 🌐 URLs de Producción
+
+- **Frontend**: Tu dominio de Render Static Site
+- **Backend**: Tu dominio de Render Web Service
+
+Asegúrate de actualizar la URL del backend en `src/components/Contact.jsx` con tu URL de producción de Render.
