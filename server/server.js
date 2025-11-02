@@ -27,6 +27,9 @@ app.use(
 );
 app.use(express.json());
 app.use("/send-email", emailRouter);
+app.use("/", (req, res) => {
+  res.send("Email server is running.");
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
