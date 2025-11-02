@@ -1,4 +1,4 @@
-import "../styles/certification.css";
+import "../styles/Certification.css";
 import GridBackgroundDemo from "./GridBackgroundDemo";
 export default function CertificationContainer({ certifications }) {
   return (
