@@ -1,5 +1,14 @@
 import { FaReact, FaNodeJs, FaHtml5, FaCss3, FaPython } from "react-icons/fa";
-import { SiJavascript, SiMongodb, SiExpress } from "react-icons/si";
+import {
+  SiJavascript,
+  SiMongodb,
+  SiExpress,
+  SiNextdotjs,
+  SiTypescript,
+  SiPrisma,
+  SiGraphql,
+  SiPostgresql,
+} from "react-icons/si";
 import { CardContainer, CardBody, CardItem } from "./3DCard";
 
 import spots from "../assets/spots.png";
@@ -8,6 +17,8 @@ import wtwr from "../assets/wtwr-bg.png";
 import dataCleaner from "../assets/data-bg.png";
 import news from "../assets/news-bg.png";
 import cyberspace from "../assets/cyberspace.png";
+import odontools from "../assets/odontools.png";
+import miniCrm from "../assets/mini-crm.png";
 
 function Projects() {
   const projects = [
@@ -42,7 +53,7 @@ function Projects() {
       description:
         "A weather app with a clean UX/UI and responsive design, with API integration and backend with Node.js and ExpressDB and MongoDB",
       image: wtwr,
-      link: "https://www.wtwrle.ignorelist.com/",
+      link: "https://seprojectreact.vercel.app/",
       technologies: [
         { icon: <FaReact />, name: "React", color: "#61DAFB" },
         { icon: <SiJavascript />, name: "JavaScript", color: "#F7DF1E" },
@@ -88,6 +99,36 @@ function Projects() {
         { icon: <SiExpress />, name: "Express", color: "#000000" },
       ],
       icon: "🪐",
+    },
+    {
+      name: "Odontools",
+      description:
+        "A full-stack e-commerce platform for dental equipment and supplies, featuring secure authentication, product management, inventory control, order processing, user roles, and email notifications.",
+      image: odontools,
+      link: "https://github.com/Lenin-Miranda/odontools",
+      technologies: [
+        { icon: <FaReact />, name: "React", color: "#61DAFB" },
+        { icon: <SiJavascript />, name: "JavaScript", color: "#F7DF1E" },
+        { icon: <FaNodeJs />, name: "Node.js", color: "#339933" },
+        { icon: <SiExpress />, name: "Express", color: "#000000" },
+        { icon: <SiMongodb />, name: "MongoDB", color: "#47A248" },
+      ],
+      icon: "🛒",
+    },
+    {
+      name: "Task Manager - Mini CRM",
+      description:
+        "Mini-CRM is a modern task management app built with Next.js 16, TypeScript, and Prisma. It features secure GitHub authentication, a sleek UI with Tailwind CSS and Radix UI, and smooth Framer Motion animations. Easily create, complete, and organize tasks with a responsive design and robust database. Ideal for teams and professionals who want fast, secure, and intuitive task management",
+      image: miniCrm,
+      link: "https://task-manager-self-iota.vercel.app/",
+      technologies: [
+        { icon: <SiNextdotjs />, name: "Next.js", color: "#000000" },
+        { icon: <SiTypescript />, name: "TypeScript", color: "#3178C6" },
+        { icon: <SiPrisma />, name: "Prisma", color: "#0C344B" },
+        { icon: <SiGraphql />, name: "GraphQL", color: "#E10098" },
+        { icon: <SiPostgresql />, name: "PostgreSQL", color: "#336791" },
+      ],
+      icon: "📋",
     },
   ];
 
