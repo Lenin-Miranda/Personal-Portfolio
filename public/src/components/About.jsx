@@ -1,5 +1,6 @@
 import LenguajeSlider from "./LenguajeSlider";
 import GridBackgroundDemo from "./GridBackgroundDemo";
+import { Typewriter } from "react-simple-typewriter";
 import {
   FaReact,
   FaGitAlt,
@@ -49,7 +50,22 @@ When I'm not coding, I like exploring new tech trends and collaborating with oth
           <span className="text-blue-500 dark:text-blue-500">
             turning ideas
           </span>{" "}
-          into clean digital realities
+          into clean digital{" "}
+          <Typewriter
+            words={[
+              "realities",
+              "experiences",
+              "solutions",
+              "products",
+              "applications",
+            ]}
+            loop={false}
+            cursor
+            cursorStyle="|"
+            typeSpeed={80}
+            deleteSpeed={80}
+            delaySpeed={800}
+          />
         </h2>
         <div className="about__container" data-aos="fade-up">
           <div className="about__container-l">
