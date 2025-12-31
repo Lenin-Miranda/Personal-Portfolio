@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
-
+import GridBackgroundDemo from "./GridBackgroundDemo";
 function Contact() {
   const [form, setForm] = useState({
     name: "",
@@ -97,7 +97,13 @@ function Contact() {
       <div className="contact__container" data-aos="fade-up">
         <h2 className="contact__container-title">Contact</h2>
 
-        <form className="contact__form" onSubmit={handleSubmit}>
+        <form
+          className={`contact__form ${isError ? "contact__form--error" : ""} ${
+            isSuccess ? "contact__form--success" : ""
+          }`}
+          onSubmit={handleSubmit}
+          aria-live="polite"
+        >
           <h2 className="contact__title">Let's get in touch :)</h2>
           <ul className="contact__form-list">
             <li className="contact__form-list-item">
@@ -181,6 +187,18 @@ function Contact() {
           >
             {isLoading ? "Sending..." : isSuccess ? "Sent" : "Send"}
           </button>
+          <div className="contact__status" role="status" aria-live="polite">
+            {isError && (
+              <span className="contact__status-error">
+                There was a problem sending your message.
+              </span>
+            )}
+            {isSuccess && (
+              <span className="contact__status-success">
+                Message sent — thank you!
+              </span>
+            )}
+          </div>
         </form>
       </div>
     </section>

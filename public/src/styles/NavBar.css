@@ -1,10 +1,17 @@
 .navbar {
-  background-color: #1a1a1a;
-  padding: 20px 40px;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 10, 15, 0.85),
+    rgba(4, 6, 8, 0.9)
+  );
+  padding: 14px 36px;
   z-index: 1000;
-  height: 100px;
-  box-shadow: 0 0 120px 0 rgba(0, 0, 0, 1);
-  transition: all 0.5s ease-in-out;
+  height: 72px;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 24px rgba(2, 6, 12, 0.6);
+  transition: all 240ms ease-in-out;
 }
 
 .navbar__container {
@@ -16,10 +23,12 @@
 }
 
 .navbar__title {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 800;
   text-align: left;
   max-width: 100%;
+  letter-spacing: -0.02em;
+  color: #fff;
 }
 
 .navbar__menu {
@@ -37,33 +46,41 @@
 
 .navbar__menu-link {
   text-align: center;
-  border-radius: 5px;
-  padding: 10px 25px;
+  border-radius: 8px;
+  padding: 8px 18px;
   box-sizing: content-box;
-  border-radius: 10px;
-  transition: all 0.5s ease;
+  transition: all 180ms ease;
   cursor: pointer;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .navbar__menu-link:hover {
-  box-shadow: 0px 0px 10px 4px rgba(57, 57, 57, 0.485);
+  transform: translateY(-3px);
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar__menu-link.active {
+  background: linear-gradient(90deg, #60a5fa, #3b82f6);
+  color: #001422;
+  font-weight: 700;
+  box-shadow: 0 10px 24px rgba(59, 130, 246, 0.14);
 }
 
 .navbar__menu-button {
-  background-color: #fff;
-  color: #000;
-  padding: 8px 16px;
+  background: linear-gradient(90deg, #60a5fa, #3b82f6);
+  color: #001422;
+  padding: 8px 14px;
   border-radius: 8px;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 14px;
   cursor: pointer;
-  transition: all 0.5s ease-in-out;
+  transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
 .navbar__menu-button:hover {
-  background-color: #e2e2e2;
-  box-shadow: 0px 0px 10px 4px rgba(147, 147, 147, 0.485);
-  transform: translate(0, -2px);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(59, 130, 246, 0.12);
 }
 .navbar__menu-icon {
   visibility: hidden;
@@ -79,11 +96,11 @@
     width: 100%;
     flex-direction: column;
     gap: 15px;
-    background-color: #ffffffb4;
+    background-color: rgba(8, 10, 15, 0.98);
     border-radius: 8px;
     font-weight: 600;
     z-index: 1000;
-    color: #434343;
+    color: #fff;
     max-height: 0;
     opacity: 0;
     overflow: hidden;
@@ -127,4 +144,12 @@
     cursor: pointer;
     font-size: 24px;
   }
+}
+
+/* focus styles for keyboard navigation */
+.navbar__menu-link:focus,
+.navbar__menu-button:focus,
+.navbar__menu-icon:focus {
+  outline: 3px solid rgba(96, 165, 250, 0.16);
+  outline-offset: 4px;
 }
