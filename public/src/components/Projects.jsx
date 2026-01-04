@@ -10,6 +10,7 @@ import {
   SiPostgresql,
 } from "react-icons/si";
 import { CardContainer, CardBody, CardItem } from "./3DCard";
+import { useState } from "react";
 
 import spots from "../assets/spots.png";
 import toDoList from "../assets/todoList.png";
@@ -21,6 +22,7 @@ import odontools from "../assets/odontools.png";
 import miniCrm from "../assets/mini-crm.png";
 
 function Projects() {
+  const [showAll, setShowAll] = useState(false);
   const projects = [
     {
       name: "Spots",
@@ -51,7 +53,7 @@ function Projects() {
     {
       name: "WTWR",
       description:
-        "A weather app with a clean UX/UI and responsive design, with API integration and backend with Node.js and ExpressDB and MongoDB",
+        "A weather application featuring clean UX/UI and responsive design, with seamless API integration and a robust backend built with Node.js, Express, and MongoDB database.",
       image: wtwr,
       link: "https://seprojectreact.vercel.app/",
       technologies: [
@@ -66,7 +68,7 @@ function Projects() {
     {
       name: "Data Cleaner",
       description:
-        "A data cleaner made for data analysis, wich allows you to clean your data and make it ready for analysis, from .xlsx to .csv, with the ability to separate addresses into different columns like street, city, state, country, etc. for very better use on software like BCC",
+        "A powerful data analysis tool that transforms and cleans datasets, converting .xlsx to .csv format while intelligently separating addresses into organized columns.",
       image: dataCleaner,
       link: "https://github.com/Lenin-Miranda/csv-cleaner",
       technologies: [{ icon: <FaPython />, name: "Python", color: "#3776AB" }],
@@ -75,7 +77,7 @@ function Projects() {
     {
       name: "News App",
       description:
-        "A news aggregator app that allows users to search and save articles from various sources, featuring a modern UI and responsive design.",
+        "A comprehensive news aggregator that enables users to search, save, and organize articles from multiple sources, featuring a modern interface and responsive design.",
       image: news,
       link: "https://lenin-miranda.github.io/News-Explorer/",
       technologies: [
@@ -89,7 +91,7 @@ function Projects() {
     {
       name: "It Cyberspace",
       description:
-        "A professional website for an IT company, showcasing services, portfolio, and contact information with a clean and modern design.",
+        "A professional corporate website for an IT company, elegantly showcasing services, portfolio highlights, and contact information with a clean and modern design aesthetic.",
       image: cyberspace,
       link: "https://it-cyberspace.com/",
       technologies: [
@@ -103,7 +105,7 @@ function Projects() {
     {
       name: "Odontools",
       description:
-        "A full-stack e-commerce platform for dental equipment and supplies, featuring secure authentication, product management, inventory control, order processing, user roles, and email notifications.",
+        "A full-stack e-commerce platform for dental equipment featuring secure authentication, inventory control, order processing, and automated email notifications.",
       image: odontools,
       link: "https://github.com/Lenin-Miranda/odontools",
       technologies: [
@@ -118,7 +120,7 @@ function Projects() {
     {
       name: "Task Manager - Mini CRM",
       description:
-        "Mini-CRM is a modern task management app built with Next.js 16, TypeScript, and Prisma. It features secure GitHub authentication, a sleek UI with Tailwind CSS and Radix UI, and smooth Framer Motion animations. Easily create, complete, and organize tasks with a responsive design and robust database. Ideal for teams and professionals who want fast, secure, and intuitive task management",
+        "A modern task management application built with Next.js 16 and TypeScript, featuring GitHub authentication, elegant UI with Tailwind and Radix, smooth animations, and PostgreSQL database.",
       image: miniCrm,
       link: "https://task-manager-self-iota.vercel.app/",
       technologies: [
@@ -132,6 +134,9 @@ function Projects() {
     },
   ];
 
+  // Mostrar solo 3 proyectos inicialmente o todos si showAll es true
+  const displayedProjects = showAll ? projects : projects.slice(0, 3);
+
   return (
     <section className="projects" data-aos="fade-up" path="projects">
       <CardContainer className="projects__container">
@@ -144,7 +149,7 @@ function Projects() {
           and deploy modern web applications from concept to completion.
         </p>
         <div className="projects__cards">
-          {projects.map((project) => (
+          {displayedProjects.map((project) => (
             <a
               href={project.link}
               target="_blank"
@@ -193,6 +198,14 @@ function Projects() {
             </a>
           ))}
         </div>
+        {projects.length > 3 && (
+          <button
+            className="projects__show-more-btn"
+            onClick={() => setShowAll(!showAll)}
+          >
+            {showAll ? "Ver menos" : "Ver más proyectos"}
+          </button>
+        )}
       </CardContainer>
     </section>
   );

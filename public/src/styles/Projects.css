@@ -1,5 +1,6 @@
 .projects {
   width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -133,6 +134,32 @@
   text-align: center;
 }
 
+.projects__show-more-btn {
+  margin-top: 30px;
+  padding: 14px 40px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg, #1c7dde, #3b82f6);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+  font-family: "Geist", sans-serif;
+  outline: none;
+}
+
+.projects__show-more-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(28, 125, 222, 0.3);
+  opacity: 0.9;
+}
+
+.projects__show-more-btn:active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 @media (max-width: 760px) {
   .projects {
     margin: 40px 0;
@@ -166,5 +193,11 @@
 
   .project__card-tecnology-name {
     font-size: 0.5rem;
+  }
+
+  .projects__show-more-btn {
+    font-size: 1rem;
+    padding: 10px 25px;
+    margin-top: 20px;
   }
 }
