@@ -203,7 +203,7 @@ function Projects() {
             className="projects__show-more-btn"
             onClick={() => setShowAll(!showAll)}
           >
-            {showAll ? "Ver menos" : "Ver más proyectos"}
+            {showAll ? "Show Less" : "Show More Projects"}
           </button>
         )}
       </CardContainer>
