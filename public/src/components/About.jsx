@@ -72,30 +72,7 @@ When I'm not coding, I like exploring new tech trends and collaborating with oth
             <h2 className="about__title">
               About <span className="text-blue-500 dark:text-blue-500">Me</span>
             </h2>
-            <p className="about__description">
-              {about.split(/(\n|\s+)/).map((token, i) => {
-                // salto de línea
-                if (token === "\n") return <br key={`br-${i}`} />;
-                // espacios (mantenerlos sin romper)
-                if (/^\s+$/.test(token))
-                  return <span key={`sp-${i}`}>&nbsp;</span>;
-
-                // palabra: envolver letras dentro de un contenedor de palabra
-                return (
-                  <span className="about__word" key={`w-${i}`}>
-                    {token.split("").map((ch, j) => (
-                      <span
-                        key={`ch-${i}-${j}`}
-                        className="about__description-char"
-                        style={{ animationDelay: `${i * 0.02 + j * 0.02}s` }}
-                      >
-                        {ch}
-                      </span>
-                    ))}
-                  </span>
-                );
-              })}
-            </p>
+            <p className="about__description">{about}</p>
           </div>
           <div className="about__container-r">
             <h2 className="text-left text-4xl font-bold text-gray-800 dark:text-gray-200">
@@ -103,126 +80,88 @@ When I'm not coding, I like exploring new tech trends and collaborating with oth
               <span className="text-blue-500 dark:text-blue-500">With</span>
             </h2>
             <div className="about__skills">
-              <ul className="about__skills-list">
-                <li className="about__skills-list-item">
-                  <h3 className="about__skills-list-item-title">Front-End</h3>
-                  <div className="about__skills-list-item-icon">
-                    <FaReact
-                      aria-label="React"
-                      className="text-blue-500 dark:text-blue-500 text-xl"
-                    />
-                    <FaCss3
-                      aria-label="CSS"
-                      className="text-blue-600 dark:text-blue-500 text-xl"
-                    />
-                    <FaHtml5
-                      aria-label="HTML"
-                      className="text-orange-600 dark:text-shadow-orange-500 text-xl"
-                    />
-                    <SiTailwindcss
-                      aria-label="TailwindCSS"
-                      className="text-blue-400 dark:text-shadow-blue-400 text-xl"
-                    />
-                    <SiJavascript
-                      aria-label="JavaScript"
-                      className="text-yellow-500 dark:text-shadow-yellow-500 text-xl"
-                    />
-                    <SiTypescript
-                      aria-label="TypeScript"
-                      className="text-blue-500 dark:text-shadow-blue-500 text-xl"
-                    />
-                  </div>
-                </li>
-                <li className="about__skills-list-item">React</li>
-                <li className="about__skills-list-item">CSS</li>
-                <li className="about__skills-list-item">HTML</li>
-                <li className="about__skills-list-item">TailwindCss</li>
-                <li className="about__skills-list-item">JavaScript</li>
-                <li className="about__skills-list-item">TypeScript</li>
-              </ul>
-              <ul className="about__skills-list">
-                <li className="about__skills-list-item">
-                  <h3 className="about__skills-list-item-title">Back-End</h3>
-                  <div className="about__skills-list-item-icon">
-                    <FaNodeJs
-                      aria-label="Node.Js"
-                      className="text-green-700 dark:text-green-600 text-xl"
-                    />
-                    <SiExpress
-                      aria-label="Express.Js"
-                      className="text-gray-600 dark:text-gray-500 text-xl"
-                    />
-                    <SiMongodb
-                      aria-label="MongoDB"
-                      className="text-green-600 dark:text-shadow-green-500 text-xl"
-                    />
-                    <FaPython
-                      aria-label="Python"
-                      className="text-blue-600 dark:text-shadow-blue-600 text-xl"
-                    />
-                    <SiJavascript
-                      aria-label="JavaScript"
-                      className="text-yellow-500 dark:text-shadow-yellow-500 text-xl"
-                    />
-                    <SiTypescript
-                      aria-label="TypeScript"
-                      className="text-blue-500 dark:text-shadow-blue-500 text-xl"
-                    />
-                  </div>
-                </li>
-                <li className="about__skills-list-item">NodeJS</li>
-                <li className="about__skills-list-item">Express</li>
-                <li className="about__skills-list-item">MongoDB</li>
-                <li className="about__skills-list-item">Python</li>
-                <li className="about__skills-list-item">JavaScript</li>
-                <li className="about__skills-list-item">TypeScript</li>
-              </ul>
-              <ul className="about__skills-list">
-                <li className="about__skills-list-item">
-                  <h3 className="about__skills-list-item-title">Tools</h3>
-                  <div className="about__skills-list-item-icon">
-                    <VscVscode
-                      aria-label="VsCode"
-                      className="text-blue-700 dark:text-blue-600 text-xl"
-                    />
-                    <SiGit
-                      aria-label="Git"
-                      className="text-orange-600 dark:text-orange-500 text-xl"
-                    />
-                    <FaGithub
-                      aria-label="GitHub"
-                      className="text-gray-600 dark:text-shadow-gray-500 text-xl"
-                    />
-                    <SiPostman
-                      aria-label="Postman"
-                      className="text-orange-500 dark:text-shadow-orange-500 text-xl"
-                    />
-                    <SiJest
-                      aria-label="Jest"
-                      className="text-pink-700 dark:text-shadow-purple-500 text-xl"
-                    />
-                    <SiEslint
-                      aria-label="Eslint"
-                      className="text-purple-500 dark:text-shadow-purple-500 text-xl"
-                    />
-                  </div>
-                </li>
-                <li className="about__skills-list-item">VsCode</li>
-                <li className="about__skills-list-item">Git</li>
-                <li className="about__skills-list-item">GitHub</li>
-                <li className="about__skills-list-item">Jest</li>
-                <li className="about__skills-list-item">Postman</li>
-                <li className="about__skills-list-item">Eslint</li>
-              </ul>
-              <ul className="about__skills-list">
-                <li className="about__skills-list-item">
-                  <h3 className="about__skills-list-item-title">Other</h3>
-                </li>
-                <li className="about__skills-list-item">Responsive Design</li>
-                <li className="about__skills-list-item">REST APIs</li>
-                <li className="about__skills-list-item">Problem Solving</li>
-                <li className="about__skills-list-item">Testing/Debugging</li>
-              </ul>
+              <div className="about__skills-list">
+                <h3 className="about__skills-list-item-title">Front-End</h3>
+                <div className="about__skills-badges">
+                  <span className="about__skill-badge">
+                    <FaReact className="text-blue-400" /> React
+                  </span>
+                  <span className="about__skill-badge">
+                    <FaCss3 className="text-blue-500" /> CSS
+                  </span>
+                  <span className="about__skill-badge">
+                    <FaHtml5 className="text-orange-500" /> HTML
+                  </span>
+                  <span className="about__skill-badge">
+                    <SiTailwindcss className="text-cyan-400" /> Tailwind
+                  </span>
+                  <span className="about__skill-badge">
+                    <SiJavascript className="text-yellow-400" /> JavaScript
+                  </span>
+                  <span className="about__skill-badge">
+                    <SiTypescript className="text-blue-400" /> TypeScript
+                  </span>
+                </div>
+              </div>
+              <div className="about__skills-list">
+                <h3 className="about__skills-list-item-title">Back-End</h3>
+                <div className="about__skills-badges">
+                  <span className="about__skill-badge">
+                    <FaNodeJs className="text-green-500" /> Node.js
+                  </span>
+                  <span className="about__skill-badge">
+                    <SiExpress className="text-gray-300" /> Express
+                  </span>
+                  <span className="about__skill-badge">
+                    <SiMongodb className="text-green-400" /> MongoDB
+                  </span>
+                  <span className="about__skill-badge">
+                    <FaPython className="text-blue-400" /> Python
+                  </span>
+                  <span className="about__skill-badge">
+                    <SiJavascript className="text-yellow-400" /> JavaScript
+                  </span>
+                  <span className="about__skill-badge">
+                    <SiTypescript className="text-blue-400" /> TypeScript
+                  </span>
+                </div>
+              </div>
+              <div className="about__skills-list">
+                <h3 className="about__skills-list-item-title">Tools</h3>
+                <div className="about__skills-badges">
+                  <span className="about__skill-badge">
+                    <VscVscode className="text-blue-500" /> VS Code
+                  </span>
+                  <span className="about__skill-badge">
+                    <SiGit className="text-orange-500" /> Git
+                  </span>
+                  <span className="about__skill-badge">
+                    <FaGithub className="text-gray-300" /> GitHub
+                  </span>
+                  <span className="about__skill-badge">
+                    <SiPostman className="text-orange-400" /> Postman
+                  </span>
+                  <span className="about__skill-badge">
+                    <SiJest className="text-pink-500" /> Jest
+                  </span>
+                  <span className="about__skill-badge">
+                    <SiEslint className="text-purple-400" /> ESLint
+                  </span>
+                </div>
+              </div>
+              <div className="about__skills-list">
+                <h3 className="about__skills-list-item-title">Other</h3>
+                <div className="about__skills-badges">
+                  <span className="about__skill-badge">
+                    📱 Responsive Design
+                  </span>
+                  <span className="about__skill-badge">🔗 REST APIs</span>
+                  <span className="about__skill-badge">🧩 Problem Solving</span>
+                  <span className="about__skill-badge">
+                    🧪 Testing/Debugging
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
