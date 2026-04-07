@@ -1,6 +1,8 @@
 import "../styles/Certification.css";
 import GridBackgroundDemo from "./GridBackgroundDemo";
 import { useEffect, useRef, useState } from "react";
+import { FiExternalLink } from "react-icons/fi";
+import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
 export default function CertificationContainer({ certifications }) {
   const [index, setIndex] = useState(0);
@@ -35,6 +37,8 @@ export default function CertificationContainer({ certifications }) {
     setIndex((i) => (i + 1) % slideCount);
   }
 
+  const cert = certifications[index];
+
   return (
     <GridBackgroundDemo>
       <section
@@ -42,91 +46,73 @@ export default function CertificationContainer({ certifications }) {
         className="certifications"
         onMouseEnter={stopAutoPlay}
         onMouseLeave={startAutoPlay}
-        ref={containerRef}
+        data-aos="fade-up"
       >
-        <div className="certification__container">
-          <div className="certification__container-content">
-            <h2 className="certification__container-title ">
-              Courses &amp;{" "}
-              <span className="text-blue-500 dark:text-blue-500">
-                Certifications
-              </span>
-            </h2>
-            <p className="certification__container-paragraph">
-              A collection of certifications that showcase my commitment to
-              continuous learning and growth in full-stack web development.
-            </p>
+        <div className="cert__header">
+          <h2 className="cert__title">
+            Courses &amp; <span className="text-blue-500">Certifications</span>
+          </h2>
+          <p className="cert__subtitle">
+            A collection of certifications that showcase my commitment to
+            continuous learning and growth in full-stack web development.
+          </p>
+        </div>
 
-            <div className="carousel" aria-roledescription="carousel">
-              <button
-                className="carousel-control prev"
-                aria-label="Previous certification"
-                onClick={goPrev}
-              >
-                ‹
-              </button>
+        <div className="cert__carousel">
+          <button
+            className="cert__arrow"
+            onClick={goPrev}
+            aria-label="Previous"
+          >
+            <HiChevronLeft />
+          </button>
 
-              <div className="carousel-window">
-                <div
-                  className="carousel-track"
-                  style={{ transform: `translateX(-${index * 100}%)` }}
-                >
-                  {certifications.map((certification) => (
-                    <div
-                      key={certification.id}
-                      className="carousel-slide"
-                      aria-roledescription="slide"
-                      data-aos="fade-left"
-                      data-aos-delay={certification.id * 80}
-                      data-aos-duration="700"
-                    >
-                      <div className="certification__item">
-                        <div className="certification__item-description">
-                          <h3 className="certification__item-title">
-                            {certification.title}
-                          </h3>
-                          <p className="certification__item-paragraph">
-                            {certification.description}
-                          </p>
-                        </div>
-                        <div className="certification__item-img">
-                          <a
-                            href={certification.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <img
-                              src={certification.image}
-                              alt={certification.title}
-                            />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <button
-                className="carousel-control next"
-                aria-label="Next certification"
-                onClick={goNext}
-              >
-                ›
-              </button>
-            </div>
-
-            <div className="carousel-dots">
-              {certifications.map((_, i) => (
-                <button
-                  key={i}
-                  className={`dot ${i === index ? "active" : ""}`}
-                  onClick={() => setIndex(i)}
-                  aria-label={`Go to slide ${i + 1}`}
+          <div className="cert__card" key={cert.id}>
+            <div className="cert__card-image-wrap">
+              <a href={cert.link} target="_blank" rel="noopener noreferrer">
+                <img
+                  src={cert.image}
+                  alt={cert.title}
+                  className="cert__card-image"
                 />
-              ))}
+                <div className="cert__card-image-overlay">
+                  <FiExternalLink />
+                  <span>View Certificate</span>
+                </div>
+              </a>
+            </div>
+            <div className="cert__card-body">
+              <div className="cert__card-meta">
+                <span className="cert__issuer-badge">{cert.issuedBy}</span>
+                <span className="cert__date">{cert.issueDate}</span>
+              </div>
+              <h3 className="cert__card-title">{cert.title}</h3>
+              <p className="cert__card-description">{cert.description}</p>
+              <a
+                href={cert.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cert__card-btn"
+              >
+                <FiExternalLink /> View Certificate
+              </a>
             </div>
           </div>
+
+          <button className="cert__arrow" onClick={goNext} aria-label="Next">
+            <HiChevronRight />
+          </button>
+        </div>
+
+        <div className="cert__dots">
+          {certifications.map((_, i) => (
+            <button
+              key={i}
+              className={`cert__dot ${i === index ? "active" : ""}`}
+              onClick={() => setIndex(i)}
+              aria-label={`Go to slide ${i + 1}`}
+            />
+          ))}
         </div>
       </section>
     </GridBackgroundDemo>
