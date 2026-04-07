@@ -12,8 +12,11 @@ function App() {
     }
     window.scrollTo(0, 0);
     AOS.init({
-      duration: 1000,
+      duration: 700,
       once: true,
+      throttleDelay: 99,
+      offset: 60,
+      disable: false,
     });
   }, []);
 

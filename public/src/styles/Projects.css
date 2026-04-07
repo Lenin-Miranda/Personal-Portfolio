@@ -4,141 +4,171 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 0;
+  padding: 60px 0;
 }
 
 .projects__container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 30px;
+}
+
+.projects__title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.projects__subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.55);
+  text-align: center;
+  max-width: 620px;
+  margin-bottom: 40px;
+  line-height: 1.6;
 }
 
 .projects__cards {
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 25px;
-  padding: 30px;
-  overflow: visible;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
 }
 
 .projects__card {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background: linear-gradient(-45deg, #3c3c3c, #2a2a2aa1, #3c3c3c, #2a2a2aa1);
-  background-size: 400% 400%;
-  animation: gradientMove 6s ease infinite;
-  border-radius: 1rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  padding: 25px;
-  max-height: 720px;
-  height: 100%;
-}
-
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .projects__card:hover {
-  transition: all 0.4s ease;
+  transform: translateY(-4px);
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 }
 
-.projects__subtitle {
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: #fff;
-  margin: 10px 0 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  max-width: 700px;
-}
-
-.projects__title {
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: #fff;
-}
-
-.projects__card-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #fff;
-  margin: 0 0 10px;
-  font-family: "Geist", sans-serif;
-}
-
-.projects__card-icon {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #333;
-  transition: transform 0.4s ease;
-}
-.projects__card-icon:hover {
-  transform: scale(1.2);
+.projects__card-image-link {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .projects__card-image {
   width: 100%;
-  max-width: 400px;
-  height: 250px;
+  height: 220px;
   object-fit: cover;
   object-position: center;
-  border-radius: 10px;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.projects__card:hover .projects__card-image {
+  transform: scale(1.04);
+}
+
+.projects__card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  flex: 1;
+}
+
+.projects__card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  font-family: "Geist", sans-serif;
+  margin: 0;
 }
 
 .projects__card-description {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-weight: 400;
-  color: #fff;
-  margin: 20px 0;
+  color: rgba(255, 255, 255, 0.55);
   font-family: "Geist", sans-serif;
-  text-align: center;
-}
-.project__card-tecnologies {
-  transition: transform 0.4s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 8px;
-  align-items: center;
-}
-.project__card-tecnology {
-  display: flex;
-  margin: 10px 0;
-  width: 60px;
-  justify-content: center;
-  gap: 30px;
-}
-.project__card-tecnologie-icon {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  font-size: 1.8rem;
+  line-height: 1.6;
+  margin: 0;
 }
 
-.project__card-tecnologies:hover {
-  transform: scale(1.2);
+.projects__card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
 }
-.project__card-tecnology-name {
-  font-size: 0.8rem;
-  text-align: center;
+
+.projects__tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: "Geist", sans-serif;
+}
+
+.projects__card-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.projects__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: "Geist", sans-serif;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  cursor: pointer;
+}
+
+.projects__btn--live {
+  background: rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  color: #93c5fd;
+}
+
+.projects__btn--live:hover {
+  background: rgba(59, 130, 246, 0.35);
+  transform: translateY(-1px);
+}
+
+.projects__btn--github {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+}
+
+.projects__btn--github:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
 }
 
 .projects__show-more-btn {
-  margin-top: 30px;
-  padding: 14px 40px;
-  font-size: 1.1rem;
-  font-weight: 700;
+  margin-top: 40px;
+  padding: 12px 36px;
+  font-size: 1rem;
+  font-weight: 600;
   color: #fff;
   background: linear-gradient(90deg, #1c7dde, #3b82f6);
   border: none;
@@ -162,37 +192,15 @@
 
 @media (max-width: 760px) {
   .projects {
-    margin: 40px 0;
+    padding: 40px 0;
   }
 
   .projects__cards {
-    padding: 20px;
-  }
-
-  .projects__card {
-    padding: 15px;
-  }
-
-  .projects__card-title {
-    font-size: 18px;
-  }
-
-  .projects__card-icon {
-    font-size: 24px;
-  }
-  .projects__card-description {
-    font-size: 16px;
+    grid-template-columns: 1fr;
   }
 
   .projects__card-image {
-    height: 200px;
-  }
-  .projects__cards {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-
-  .project__card-tecnology-name {
-    font-size: 0.5rem;
+    height: 180px;
   }
 
   .projects__show-more-btn {

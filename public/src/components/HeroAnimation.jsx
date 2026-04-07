@@ -8,7 +8,7 @@ export const BackgroundLines = ({ children, className, svgOptions }) => {
     <div
       className={cn(
         "absolute inset-0 w-full h-full pointer-events-none z-0",
-        className
+        className,
       )}
       style={{
         backgroundColor: "rgba(0, 0, 0, 0.02)",
@@ -29,6 +29,12 @@ const pathVariants = {
     opacity: [0, 1, 1, 0],
   },
 };
+
+// Pre-compute delays once — avoids Math.random() being called on every render
+const precomputedDelays = Array.from({ length: 21 }, () => ({
+  delay: Math.floor(Math.random() * 5),
+  repeatDelay: Math.floor(Math.random() * 3 + 1),
+}));
 
 const SVG = ({ svgOptions }) => {
   const paths = [
@@ -110,8 +116,8 @@ const SVG = ({ svgOptions }) => {
             ease: "linear",
             repeat: Infinity,
             repeatType: "loop",
-            delay: Math.floor(Math.random() * 5),
-            repeatDelay: Math.floor(Math.random() * 3 + 1),
+            delay: precomputedDelays[idx].delay,
+            repeatDelay: precomputedDelays[idx].repeatDelay,
           }}
           key={`path-${idx}`}
         />

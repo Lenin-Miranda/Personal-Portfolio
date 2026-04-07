@@ -7,15 +7,9 @@ import { MdEmail } from "react-icons/md";
 function Hero() {
   const titleWords = [
     "Full Stack Software Engineer",
-    "Software Engineer",
     "JavaScript Developer",
     "Web Developer",
-  ];
-  const descriptionWords = [
-    "passionate",
-    "creative",
-    "innovative",
-    "dedicated",
+    "React Developer",
   ];
 
   return (

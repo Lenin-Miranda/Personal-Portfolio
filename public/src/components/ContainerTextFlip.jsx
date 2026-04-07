@@ -49,7 +49,7 @@ export function ContainerTextFlip({
         "border border-gray-800",
         "min-w-[200px]",
         "min-h-[80px]",
-        className
+        className,
       )}
       key={words[currentWordIndex]}
     >
@@ -68,11 +68,11 @@ export function ContainerTextFlip({
               key={index}
               initial={{
                 opacity: 0,
-                filter: "blur(10px)",
+                y: 6,
               }}
               animate={{
                 opacity: 1,
-                filter: "blur(0px)",
+                y: 0,
               }}
               transition={{
                 delay: index * 0.02,

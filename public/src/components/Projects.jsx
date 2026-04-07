@@ -1,4 +1,11 @@
-import { FaReact, FaNodeJs, FaHtml5, FaCss3, FaPython } from "react-icons/fa";
+import {
+  FaReact,
+  FaNodeJs,
+  FaHtml5,
+  FaCss3,
+  FaPython,
+  FaGithub,
+} from "react-icons/fa";
 import {
   SiJavascript,
   SiMongodb,
@@ -9,7 +16,7 @@ import {
   SiGraphql,
   SiPostgresql,
 } from "react-icons/si";
-import { CardContainer, CardBody, CardItem } from "./3DCard";
+import { FiExternalLink } from "react-icons/fi";
 import { useState } from "react";
 
 import spots from "../assets/spots.png";
@@ -27,119 +34,117 @@ function Projects() {
     {
       name: "Spots",
       description:
-        "A vibrant social media platform where users can share and discover photos of their favorite places, featuring an intuitive interface and interactive community features.",
+        "Social platform to share and discover photos of your favorite places.",
       image: spots,
       link: "https://lenin-miranda.github.io/se_project_spots/",
+      github: "https://github.com/Lenin-Miranda/se_project_spots",
       technologies: [
         { icon: <FaHtml5 />, name: "HTML", color: "#E34F26" },
         { icon: <FaCss3 />, name: "CSS", color: "#1572B6" },
         { icon: <SiJavascript />, name: "JavaScript", color: "#F7DF1E" },
       ],
-      icon: "🌄",
     },
     {
       name: "To-Do List",
       description:
-        "A productivity app designed for efficient task management, offering real-time form validation, a clean and responsive UI, and seamless user experience across devices.",
+        "Task manager with real-time form validation and a responsive UI.",
       image: toDoList,
       link: "https://lenin-miranda.github.io/se_project_todo-app/",
+      github: "https://github.com/Lenin-Miranda/se_project_todo-app",
       technologies: [
         { icon: <FaHtml5 />, name: "HTML", color: "#E34F26" },
         { icon: <FaCss3 />, name: "CSS", color: "#1572B6" },
         { icon: <SiJavascript />, name: "JavaScript", color: "#F7DF1E" },
       ],
-      icon: "📝",
     },
     {
       name: "WTWR",
-      description:
-        "A weather application featuring clean UX/UI and responsive design, with seamless API integration and a robust backend built with Node.js, Express, and MongoDB database.",
+      description: "Weather app with clean UX and a Node.js + MongoDB backend.",
       image: wtwr,
       link: "https://seprojectreact.vercel.app/",
+      github: null,
       technologies: [
         { icon: <FaReact />, name: "React", color: "#61DAFB" },
         { icon: <SiJavascript />, name: "JavaScript", color: "#F7DF1E" },
         { icon: <FaNodeJs />, name: "Node.js", color: "#339933" },
-        { icon: <SiExpress />, name: "Express", color: "#000000" },
+        { icon: <SiExpress />, name: "Express", color: "#888" },
         { icon: <SiMongodb />, name: "MongoDB", color: "#47A248" },
       ],
-      icon: "🌤️",
     },
     {
       name: "Data Cleaner",
       description:
-        "A powerful data analysis tool that transforms and cleans datasets, converting .xlsx to .csv format while intelligently separating addresses into organized columns.",
+        "Python tool that converts .xlsx to .csv and organizes address data.",
       image: dataCleaner,
       link: "https://github.com/Lenin-Miranda/csv-cleaner",
+      github: "https://github.com/Lenin-Miranda/csv-cleaner",
       technologies: [{ icon: <FaPython />, name: "Python", color: "#3776AB" }],
-      icon: "🧹",
     },
     {
       name: "News App",
       description:
-        "A comprehensive news aggregator that enables users to search, save, and organize articles from multiple sources, featuring a modern interface and responsive design.",
+        "News aggregator to search and save articles from multiple sources.",
       image: news,
       link: "https://lenin-miranda.github.io/News-Explorer/",
+      github: "https://github.com/Lenin-Miranda/News-Explorer",
       technologies: [
         { icon: <FaReact />, name: "React", color: "#61DAFB" },
         { icon: <SiJavascript />, name: "JavaScript", color: "#F7DF1E" },
         { icon: <FaNodeJs />, name: "Node.js", color: "#339933" },
-        { icon: <SiExpress />, name: "Express", color: "#000000" },
+        { icon: <SiExpress />, name: "Express", color: "#888" },
       ],
-      icon: "📰",
     },
     {
       name: "It Cyberspace",
       description:
-        "A professional corporate website for an IT company, elegantly showcasing services, portfolio highlights, and contact information with a clean and modern design aesthetic.",
+        "Corporate website for an IT company showcasing services and portfolio.",
       image: cyberspace,
       link: "https://it-cyberspace.com/",
+      github: null,
       technologies: [
         { icon: <FaReact />, name: "React", color: "#61DAFB" },
         { icon: <SiJavascript />, name: "JavaScript", color: "#F7DF1E" },
         { icon: <FaNodeJs />, name: "Node.js", color: "#339933" },
-        { icon: <SiExpress />, name: "Express", color: "#000000" },
+        { icon: <SiExpress />, name: "Express", color: "#888" },
       ],
-      icon: "🪐",
     },
     {
       name: "Odontools",
       description:
-        "A full-stack e-commerce platform for dental equipment featuring secure authentication, inventory control, order processing, and automated email notifications.",
+        "E-commerce platform for dental equipment with auth, inventory, and orders.",
       image: odontools,
       link: "https://github.com/Lenin-Miranda/odontools",
+      github: "https://github.com/Lenin-Miranda/odontools",
       technologies: [
         { icon: <FaReact />, name: "React", color: "#61DAFB" },
         { icon: <SiJavascript />, name: "JavaScript", color: "#F7DF1E" },
         { icon: <FaNodeJs />, name: "Node.js", color: "#339933" },
-        { icon: <SiExpress />, name: "Express", color: "#000000" },
+        { icon: <SiExpress />, name: "Express", color: "#888" },
         { icon: <SiMongodb />, name: "MongoDB", color: "#47A248" },
       ],
-      icon: "🛒",
     },
     {
-      name: "Task Manager - Mini CRM",
+      name: "Task Manager",
       description:
-        "A modern task management application built with Next.js 16 and TypeScript, featuring GitHub authentication, elegant UI with Tailwind and Radix, smooth animations, and PostgreSQL database.",
+        "Task management app with GitHub auth, Next.js 16, and PostgreSQL.",
       image: miniCrm,
       link: "https://task-manager-self-iota.vercel.app/",
+      github: null,
       technologies: [
-        { icon: <SiNextdotjs />, name: "Next.js", color: "#000000" },
+        { icon: <SiNextdotjs />, name: "Next.js", color: "#fff" },
         { icon: <SiTypescript />, name: "TypeScript", color: "#3178C6" },
         { icon: <SiPrisma />, name: "Prisma", color: "#0C344B" },
         { icon: <SiGraphql />, name: "GraphQL", color: "#E10098" },
         { icon: <SiPostgresql />, name: "PostgreSQL", color: "#336791" },
       ],
-      icon: "📋",
     },
   ];
 
-  // Mostrar solo 3 proyectos inicialmente o todos si showAll es true
-  const displayedProjects = showAll ? projects : projects.slice(0, 3);
+  const displayedProjects = showAll ? projects : projects.slice(0, 6);
 
   return (
     <section className="projects" data-aos="fade-up" path="projects">
-      <CardContainer className="projects__container">
+      <div className="projects__container">
         <h2 className="projects__title">
           Projects &{" "}
           <span className="text-blue-500 dark:text-blue-500">Work</span>
@@ -150,55 +155,65 @@ function Projects() {
         </p>
         <div className="projects__cards">
           {displayedProjects.map((project) => (
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none" }}
+            <div
+              className="projects__card"
               key={project.name}
+              data-aos="fade-up"
             >
-              <CardBody className="projects__card" data-aos="fade-left">
-                <CardItem className="projects__card-icon">
-                  {project.icon}
-                </CardItem>
-                <CardItem
-                  className="projects__card-title"
-                  style={{ margin: "0 0 10px" }}
-                >
-                  {project.name}
-                </CardItem>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="projects__card-image-link"
+              >
                 <img
                   className="projects__card-image"
                   src={project.image}
                   alt={project.name}
                 />
-                <CardItem className="projects__card-description">
+              </a>
+              <div className="projects__card-body">
+                <h3 className="projects__card-title">{project.name}</h3>
+                <p className="projects__card-description">
                   {project.description}
-                </CardItem>
-                <CardItem className="project__card-tecnology">
+                </p>
+                <div className="projects__card-tech">
                   {project.technologies.map((tech, index) => (
-                    <i
+                    <span
                       key={index}
-                      className="project__card-tecnologies"
-                      style={{
-                        color: tech.color,
-                      }}
+                      className="projects__tech-badge"
+                      style={{ color: tech.color }}
                     >
-                      <span className="project__card-tecnology-icon">
-                        {tech.icon}
-                        {""}
-                      </span>
-                      <span className="project__card-tecnology-name">
-                        {tech.name}
-                      </span>
-                    </i>
+                      {tech.icon}
+                      {tech.name}
+                    </span>
                   ))}
-                </CardItem>
-              </CardBody>
-            </a>
+                </div>
+                <div className="projects__card-actions">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="projects__btn projects__btn--live"
+                  >
+                    <FiExternalLink /> View Project
+                  </a>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="projects__btn projects__btn--github"
+                    >
+                      <FaGithub /> GitHub
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
           ))}
         </div>
-        {projects.length > 3 && (
+        {projects.length > 6 && (
           <button
             className="projects__show-more-btn"
             onClick={() => setShowAll(!showAll)}
@@ -206,7 +221,7 @@ function Projects() {
             {showAll ? "Show Less" : "Show More Projects"}
           </button>
         )}
-      </CardContainer>
+      </div>
     </section>
   );
 }

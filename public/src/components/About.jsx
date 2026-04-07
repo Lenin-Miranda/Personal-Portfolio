@@ -47,27 +47,29 @@ When I'm not coding, I like exploring new tech trends and collaborating with oth
       <GridBackgroundDemo>
         <h2 className="about__subtitle ">
           Software Developer{" "}
-          <span className="text-blue-500 dark:text-blue-500">
-            turning ideas
-          </span>{" "}
+          <span className="text-blue-500">turning ideas</span>
+          <br />
           into clean digital{" "}
-          <Typewriter
-            words={[
-              "realities",
-              "experiences",
-              "solutions",
-              "products",
-              "applications",
-            ]}
-            loop={false}
-            cursor
-            cursorStyle="|"
-            typeSpeed={80}
-            deleteSpeed={80}
-            delaySpeed={800}
-          />
+          <span className="text-blue-500 dark:text-blue-500">
+            {" "}
+            <Typewriter
+              words={[
+                "realities",
+                "experiences",
+                "solutions",
+                "products",
+                "applications",
+              ]}
+              loop={false}
+              cursor
+              cursorStyle="|"
+              typeSpeed={80}
+              deleteSpeed={80}
+              delaySpeed={800}
+            />
+          </span>
         </h2>
-        <div className="about__container" data-aos="fade-up">
+        <div className="about__container">
           <div className="about__container-l">
             <h2 className="about__title">
               About <span className="text-blue-500 dark:text-blue-500">Me</span>
