@@ -1,6 +1,8 @@
 import { BackgroundLines } from "./HeroAnimation";
 import { motion } from "motion/react";
 import { ContainerTextFlip } from "./ContainerTextFlip";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 function Hero() {
   const titleWords = [
@@ -30,24 +32,57 @@ function Hero() {
               <ContainerTextFlip words={titleWords} />
             </span>
           </motion.h1>
-
-          <motion.div
-            className="hero__description"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-          >
-            I'm a self-taught web developer passionate about building clean,
-            modern, and functional interfaces. I enjoy turning ideas into
-            interactive experiences using technologies like React, JavaScript,
-            and Node.js. I'm always learning, improving my skills, and embracing
-            new challenges that help me grow as a professional. I'm looking for
-            opportunities where I can bring value, collaborate with others, and
-            continue evolving in the world of web development.
-          </motion.div>
         </div>
 
-        <div className="hidden bg-blue-500 bg-opacity-80 shadow-lg border border-blue-400 min-w-[200px] rounded-lg pt-2 pb-3 text-center text-4xl font-bold text-white"></div>
+        <div className="hero__bottom">
+          <div className="hero__socials">
+            <a
+              href="https://github.com/Lenin-Miranda"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero__social-link"
+              aria-label="GitHub"
+            >
+              <FaGithub />
+              <span>GitHub</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/lenin-miranda-0b74b4288/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero__social-link"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin />
+              <span>LinkedIn</span>
+            </a>
+            <a href="#contact" className="hero__social-link" aria-label="Email">
+              <MdEmail />
+              <span>Contact</span>
+            </a>
+          </div>
+
+          <motion.a
+            href="#about"
+            className="hero__scroll-down"
+            aria-label="Scroll down"
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </motion.a>
+        </div>
       </div>
     </section>
   );
