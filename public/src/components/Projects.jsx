@@ -28,6 +28,7 @@ import cyberspace from "../assets/cyberspace.png";
 import odontools from "../assets/odontools.png";
 import miniCrm from "../assets/mini-crm.png";
 import offerly from "../assets/offerly.jpg";
+import magnificentlyWooden from "../assets/Magnificently wooden.jpg";
 
 function Projects() {
   const [showAll, setShowAll] = useState(false);
@@ -45,6 +46,23 @@ function Projects() {
         { icon: <SiNextdotjs />, name: "Next.js", color: "#fff" },
         { icon: <SiTypescript />, name: "TypeScript", color: "#3178C6" },
         { icon: <FaNodeJs />, name: "Node.js", color: "#339933" },
+        { icon: <SiExpress />, name: "Express", color: "#888" },
+        { icon: <SiMongodb />, name: "MongoDB", color: "#47A248" },
+      ],
+    },
+    {
+      name: "Magnificently Wooden",
+      description:
+        "Handcrafted wooden aircraft e-commerce platform with product browsing, cart flows, and payment integration.",
+      image: magnificentlyWooden,
+      link: "https://github.com/Lenin-Miranda/Magnificently-WoodenFE",
+      github: "https://github.com/Lenin-Miranda/Magnificently-WoodenFE",
+      status: "in-progress",
+      statusLabel: "In-process",
+      technologies: [
+        { icon: <SiNextdotjs />, name: "Next.js", color: "#fff" },
+        { icon: <SiTypescript />, name: "TypeScript", color: "#3178C6" },
+        { icon: <FaPython />, name: "Python", color: "#3776AB" },
         { icon: <SiExpress />, name: "Express", color: "#888" },
         { icon: <SiMongodb />, name: "MongoDB", color: "#47A248" },
       ],
