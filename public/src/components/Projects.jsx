@@ -10,6 +10,7 @@ import {
   SiJavascript,
   SiMongodb,
   SiExpress,
+  SiExpo,
   SiNextdotjs,
   SiTypescript,
   SiPrisma,
@@ -29,6 +30,7 @@ import odontools from "../assets/odontools.png";
 import miniCrm from "../assets/mini-crm.png";
 import offerly from "../assets/offerly.jpg";
 import magnificentlyWooden from "../assets/Magnificently wooden.jpg";
+import spreadKindness from "../assets/spread kindness.jpg";
 
 function Projects() {
   const [showAll, setShowAll] = useState(false);
@@ -65,6 +67,22 @@ function Projects() {
         { icon: <FaPython />, name: "Python", color: "#3776AB" },
         { icon: <SiExpress />, name: "Express", color: "#888" },
         { icon: <SiMongodb />, name: "MongoDB", color: "#47A248" },
+      ],
+    },
+    {
+      name: "Spread Kindness",
+      description:
+        "Mobile app concept for a kindness-focused community with authentication flow and polished onboarding screens.",
+      image: spreadKindness,
+      link: "https://github.com/Lenin-Miranda/spread-kindess-mobile",
+      github: "https://github.com/Lenin-Miranda/spread-kindess-mobile",
+      status: "in-progress",
+      statusLabel: "In-process",
+      technologies: [
+        { icon: <FaReact />, name: "React Native", color: "#61DAFB" },
+        { icon: <SiTypescript />, name: "TypeScript", color: "#3178C6" },
+        { icon: <SiExpo />, name: "Expo", color: "#fff" },
+        { icon: <FaCss3 />, name: "NativeWind", color: "#1572B6" },
       ],
     },
     {
