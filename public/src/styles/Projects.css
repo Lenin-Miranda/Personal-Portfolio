@@ -41,6 +41,7 @@
 }
 
 .projects__card {
+  position: relative;
   display: flex;
   flex-direction: column;
   background: rgba(255, 255, 255, 0.04);
@@ -54,6 +55,57 @@
   transform: translateY(-4px);
   border-color: rgba(59, 130, 246, 0.4);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.projects__status {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  border: none;
+  box-shadow: none;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.projects__status::after {
+  content: attr(aria-label);
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.95);
+  color: #f8fafc;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(-4px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.projects__status:hover::after,
+.projects__status:focus-visible::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.projects__status:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 3px;
+}
+
+.projects__status--completed {
+  background: #22c55e;
+}
+
+.projects__status--in-progress {
+  background: #facc15;
 }
 
 .projects__card-image-link {

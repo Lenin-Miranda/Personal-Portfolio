@@ -27,10 +27,28 @@ import news from "../assets/news-bg.png";
 import cyberspace from "../assets/cyberspace.png";
 import odontools from "../assets/odontools.png";
 import miniCrm from "../assets/mini-crm.png";
+import offerly from "../assets/offerly.jpg";
 
 function Projects() {
   const [showAll, setShowAll] = useState(false);
   const projects = [
+    {
+      name: "Offerly",
+      description:
+        "Job application tracker with a Kanban board, authentication, and full-stack status management.",
+      image: offerly,
+      link: "https://github.com/Lenin-Miranda/OfferlyFE",
+      github: "https://github.com/Lenin-Miranda/OfferlyFE",
+      status: "in-progress",
+      statusLabel: "In-process",
+      technologies: [
+        { icon: <SiNextdotjs />, name: "Next.js", color: "#fff" },
+        { icon: <SiTypescript />, name: "TypeScript", color: "#3178C6" },
+        { icon: <FaNodeJs />, name: "Node.js", color: "#339933" },
+        { icon: <SiExpress />, name: "Express", color: "#888" },
+        { icon: <SiMongodb />, name: "MongoDB", color: "#47A248" },
+      ],
+    },
     {
       name: "Spots",
       description:
@@ -38,6 +56,8 @@ function Projects() {
       image: spots,
       link: "https://lenin-miranda.github.io/se_project_spots/",
       github: "https://github.com/Lenin-Miranda/se_project_spots",
+      status: "completed",
+      statusLabel: "Completed",
       technologies: [
         { icon: <FaHtml5 />, name: "HTML", color: "#E34F26" },
         { icon: <FaCss3 />, name: "CSS", color: "#1572B6" },
@@ -51,6 +71,8 @@ function Projects() {
       image: toDoList,
       link: "https://lenin-miranda.github.io/se_project_todo-app/",
       github: "https://github.com/Lenin-Miranda/se_project_todo-app",
+      status: "completed",
+      statusLabel: "Completed",
       technologies: [
         { icon: <FaHtml5 />, name: "HTML", color: "#E34F26" },
         { icon: <FaCss3 />, name: "CSS", color: "#1572B6" },
@@ -63,6 +85,8 @@ function Projects() {
       image: wtwr,
       link: "https://seprojectreact.vercel.app/",
       github: null,
+      status: "completed",
+      statusLabel: "Completed",
       technologies: [
         { icon: <FaReact />, name: "React", color: "#61DAFB" },
         { icon: <SiJavascript />, name: "JavaScript", color: "#F7DF1E" },
@@ -78,6 +102,8 @@ function Projects() {
       image: dataCleaner,
       link: "https://github.com/Lenin-Miranda/csv-cleaner",
       github: "https://github.com/Lenin-Miranda/csv-cleaner",
+      status: "completed",
+      statusLabel: "Completed",
       technologies: [{ icon: <FaPython />, name: "Python", color: "#3776AB" }],
     },
     {
@@ -87,6 +113,8 @@ function Projects() {
       image: news,
       link: "https://lenin-miranda.github.io/News-Explorer/",
       github: "https://github.com/Lenin-Miranda/News-Explorer",
+      status: "completed",
+      statusLabel: "Completed",
       technologies: [
         { icon: <FaReact />, name: "React", color: "#61DAFB" },
         { icon: <SiJavascript />, name: "JavaScript", color: "#F7DF1E" },
@@ -101,6 +129,8 @@ function Projects() {
       image: cyberspace,
       link: "https://it-cyberspace.com/",
       github: null,
+      status: "completed",
+      statusLabel: "Completed",
       technologies: [
         { icon: <FaReact />, name: "React", color: "#61DAFB" },
         { icon: <SiJavascript />, name: "JavaScript", color: "#F7DF1E" },
@@ -115,6 +145,8 @@ function Projects() {
       image: odontools,
       link: "https://github.com/Lenin-Miranda/odontools",
       github: "https://github.com/Lenin-Miranda/odontools",
+      status: "completed",
+      statusLabel: "Completed",
       technologies: [
         { icon: <FaReact />, name: "React", color: "#61DAFB" },
         { icon: <SiJavascript />, name: "JavaScript", color: "#F7DF1E" },
@@ -130,6 +162,8 @@ function Projects() {
       image: miniCrm,
       link: "https://task-manager-self-iota.vercel.app/",
       github: null,
+      status: "completed",
+      statusLabel: "Completed",
       technologies: [
         { icon: <SiNextdotjs />, name: "Next.js", color: "#fff" },
         { icon: <SiTypescript />, name: "TypeScript", color: "#3178C6" },
@@ -160,6 +194,11 @@ function Projects() {
               key={project.name}
               data-aos="fade-up"
             >
+              <span
+                className={`projects__status projects__status--${project.status}`}
+                aria-label={project.statusLabel}
+                tabIndex={0}
+              />
               <a
                 href={project.link}
                 target="_blank"
