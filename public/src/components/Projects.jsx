@@ -13,9 +13,12 @@ import {
   SiExpo,
   SiNextdotjs,
   SiTypescript,
+  SiNestjs,
   SiPrisma,
   SiGraphql,
   SiPostgresql,
+  SiSocketdotio,
+  SiSupabase,
 } from "react-icons/si";
 import { FiExternalLink } from "react-icons/fi";
 import { useState } from "react";
@@ -31,10 +34,28 @@ import miniCrm from "../assets/mini-crm.png";
 import offerly from "../assets/offerly.jpg";
 import magnificentlyWooden from "../assets/Magnificently wooden.jpg";
 import spreadKindness from "../assets/spread kindness.jpg";
+import impostorOnlineGame from "../assets/impostor-online-game.jpg";
 
 function Projects() {
   const [showAll, setShowAll] = useState(false);
   const projects = [
+    {
+      name: "Impostor Futbol Online",
+      description:
+        "Real-time soccer impostor game with room creation, role reveal, voting, scoring, and multiplayer rounds.",
+      image: impostorOnlineGame,
+      link: "https://impostor-online-game.vercel.app/",
+      github: "https://github.com/Lenin-Miranda/impostor-online-game",
+      status: "completed",
+      statusLabel: "Completed",
+      technologies: [
+        { icon: <SiNextdotjs />, name: "Next.js", color: "#fff" },
+        { icon: <SiTypescript />, name: "TypeScript", color: "#3178C6" },
+        { icon: <SiNestjs />, name: "NestJS", color: "#E0234E" },
+        { icon: <SiSupabase />, name: "Supabase", color: "#3ECF8E" },
+        { icon: <SiSocketdotio />, name: "Socket.IO", color: "#fff" },
+      ],
+    },
     {
       name: "Offerly",
       description:
