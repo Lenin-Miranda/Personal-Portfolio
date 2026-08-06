@@ -61,7 +61,7 @@ function Projects() {
       description:
         "Job application tracker with a Kanban board, authentication, and full-stack status management.",
       image: offerly,
-      link: "https://github.com/Lenin-Miranda/OfferlyFE",
+      link: null,
       github: "https://github.com/Lenin-Miranda/OfferlyFE",
       status: "in-progress",
       statusLabel: "In-process",
@@ -78,7 +78,7 @@ function Projects() {
       description:
         "Handcrafted wooden aircraft e-commerce platform with product browsing, cart flows, and payment integration.",
       image: magnificentlyWooden,
-      link: "https://github.com/Lenin-Miranda/Magnificently-WoodenFE",
+      link: null,
       github: "https://github.com/Lenin-Miranda/Magnificently-WoodenFE",
       status: "in-progress",
       statusLabel: "In-process",
@@ -95,7 +95,7 @@ function Projects() {
       description:
         "Mobile app concept for a kindness-focused community with authentication flow and polished onboarding screens.",
       image: spreadKindness,
-      link: "https://github.com/Lenin-Miranda/spread-kindess-mobile",
+      link: null,
       github: "https://github.com/Lenin-Miranda/spread-kindess-mobile",
       status: "in-progress",
       statusLabel: "In-process",
@@ -157,7 +157,7 @@ function Projects() {
       description:
         "Python tool that converts .xlsx to .csv and organizes address data.",
       image: dataCleaner,
-      link: "https://github.com/Lenin-Miranda/csv-cleaner",
+      link: null,
       github: "https://github.com/Lenin-Miranda/csv-cleaner",
       status: "completed",
       statusLabel: "Completed",
@@ -185,7 +185,7 @@ function Projects() {
         "Corporate website for an IT company showcasing services and portfolio.",
       image: cyberspace,
       link: "https://it-cyberspace.com/",
-      github: null,
+      github: "https://github.com/Lenin-Miranda/IT-CyberSpace",
       status: "completed",
       statusLabel: "Completed",
       technologies: [
@@ -200,8 +200,8 @@ function Projects() {
       description:
         "E-commerce platform for dental equipment with auth, inventory, and orders.",
       image: odontools,
-      link: "https://github.com/Lenin-Miranda/odontools",
-      github: "https://github.com/Lenin-Miranda/odontools",
+      link: "https://odontools.vercel.app/",
+      github: "https://github.com/Lenin-Miranda/Odontools",
       status: "completed",
       statusLabel: "Completed",
       technologies: [
@@ -218,7 +218,7 @@ function Projects() {
         "Task management app with GitHub auth, Next.js 16, and PostgreSQL.",
       image: miniCrm,
       link: "https://task-manager-self-iota.vercel.app/",
-      github: null,
+      github: "https://github.com/Lenin-Miranda/Task-Manager",
       status: "completed",
       statusLabel: "Completed",
       technologies: [
@@ -256,18 +256,28 @@ function Projects() {
                 aria-label={project.statusLabel}
                 tabIndex={0}
               />
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="projects__card-image-link"
-              >
-                <img
-                  className="projects__card-image"
-                  src={project.image}
-                  alt={project.name}
-                />
-              </a>
+              {project.link ? (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="projects__card-image-link"
+                >
+                  <img
+                    className="projects__card-image"
+                    src={project.image}
+                    alt={project.name}
+                  />
+                </a>
+              ) : (
+                <div className="projects__card-image-link">
+                  <img
+                    className="projects__card-image"
+                    src={project.image}
+                    alt={project.name}
+                  />
+                </div>
+              )}
               <div className="projects__card-body">
                 <h3 className="projects__card-title">{project.name}</h3>
                 <p className="projects__card-description">
@@ -286,14 +296,16 @@ function Projects() {
                   ))}
                 </div>
                 <div className="projects__card-actions">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="projects__btn projects__btn--live"
-                  >
-                    <FiExternalLink /> View Project
-                  </a>
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="projects__btn projects__btn--live"
+                    >
+                      <FiExternalLink /> View Project
+                    </a>
+                  )}
                   {project.github && (
                     <a
                       href={project.github}
