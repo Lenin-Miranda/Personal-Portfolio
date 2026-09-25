@@ -1,101 +1,66 @@
 # Personal Portfolio
 
-Un portafolio personal moderno construido con React, Vite y Tailwind CSS.
+Portafolio de Lenin Miranda con React/Vite y un servicio Express para el formulario de contacto.
 
-## 🚀 Despliegue en Render
+## Estructura
 
-### Frontend (Static Site)
+| Carpeta | Responsabilidad |
+| --- | --- |
+| [public/](public/) | Aplicación React, estilos y recursos |
+| [server/](server/) | API de correo con Nodemailer |
+| `public/dist/` | Resultado del build del frontend |
 
-1. Conecta tu repositorio de GitHub a Render
-2. Crea un nuevo **Static Site**
-3. Configuración:
-   - **Build Command**: `cd public && npm install && npm run build`
-   - **Publish Directory**: `public/dist`
-   - **Environment**: Node 18+
+Aquí `public/` es la raíz de la aplicación frontend, no una simple carpeta de archivos estáticos.
 
-### Backend (Web Service)
+## Instalación local
 
-1. Crea un nuevo **Web Service** en Render
-2. Configuración:
-   - **Build Command**: `cd server && npm install`
-   - **Start Command**: `cd server && npm start`
-   - **Environment**: Node 18+
-
-#### Variables de Entorno del Backend:
-
-```
-EMAIL_USER=tu_email@gmail.com
-EMAIL_PASS=tu_contraseña_de_aplicacion
-PORT=10000
-```
-
-## 🛠️ Desarrollo Local
-
-### Frontend
+Necesitas Node.js y npm.
 
 ```bash
-cd public
-npm install
-npm run dev
+git clone https://github.com/Lenin-Miranda/Personal-Portfolio.git
+cd Personal-Portfolio
+npm install --prefix public
+npm install --prefix server
 ```
 
-### Backend
+Crea `server/.env` con tus propias credenciales:
+
+```dotenv
+PORT=3001
+EMAIL_USER=tu-remitente@example.com
+EMAIL_PASS=tu-password-de-aplicacion
+```
+
+Inicia cada servicio en una terminal distinta, desde la raíz:
 
 ```bash
-cd server
-npm install
-npm start
+npm run dev --prefix public
 ```
 
-## 📁 Estructura del Proyecto
-
-```
-├── public/          # Frontend React + Vite
-│   ├── src/
-│   ├── dist/        # Build output
-│   └── package.json
-├── server/          # Backend Express
-│   ├── routes/
-│   ├── .env
-│   └── package.json
-└── README.md
+```bash
+npm start --prefix server
 ```
 
-## 🔧 Tecnologías
+Vite está configurado en [localhost:3000](http://localhost:3000); la API utiliza el puerto 3001.
 
-### Frontend
+## Formulario de contacto
 
-- React 19
-- Vite 6
-- Tailwind CSS 4
-- Framer Motion
-- AOS (Animate On Scroll)
-- Swiper
-- TypeWriter Effect
-- React Icons
-- SweetAlert2
+[public/src/components/Contact.jsx](public/src/components/Contact.jsx) contiene una URL fija del backend alojado. Para usar la API local, configura allí `http://localhost:3001/send-email`. Iniciar el servidor local no cambia automáticamente el destino del formulario.
 
-### Backend
+El servidor utiliza Gmail mediante Nodemailer; configura una cuenta compatible con contraseña de aplicación. Las pruebas del formulario pueden enviar mensajes reales.
 
-- Node.js
-- Express 5
-- Nodemailer
-- CORS
-- dotenv
+## Comandos de verificación
 
-## 📧 Formulario de Contacto
+```bash
+npm run lint --prefix public
+npm run build --prefix public
+npm run preview --prefix public
+```
 
-El formulario de contacto utiliza Nodemailer para enviar emails a través de Gmail.
+El backend no tiene una suite funcional: su script `test` es un marcador que termina con error.
 
-### Configuración de Gmail:
+## Despliegue
 
-1. Habilita la verificación en dos pasos
-2. Genera una contraseña de aplicación
-3. Usa la contraseña de aplicación en `EMAIL_PASS`
+Para el frontend, instala/compila desde `public/` y publica `public/dist/`. Para la API, instala desde `server/`, inicia con `npm start` y configura las variables de correo en el hosting.
 
-## 🌐 URLs de Producción
-
-- **Frontend**: Tu dominio de Render Static Site
-- **Backend**: Tu dominio de Render Web Service
-
-Asegúrate de actualizar la URL del backend en `src/components/Contact.jsx` con tu URL de producción de Render.
+Actualiza la URL del formulario y la lista CORS en [server/server.js](server/server.js) para que coincidan con los dominios elegidos. Revisa navegación, diseño móvil y estados del formulario antes de publicar.
